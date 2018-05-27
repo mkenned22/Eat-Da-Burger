@@ -1,1 +1,17 @@
-<h1>Hello World!</h1>
+<h1>Burgers Ready to Eat!</h1>
+<ul>
+  {{#each burgers}}
+    <li>{{burger_name}}</li>
+  {{/each}}
+</ul>
+
+<h1>If you are running low, make a new burger:</h1>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="newBurger">Burger Type:</label>
+    <input type="text" id="newBurger" name="name">
+  </div>
+
+  <button type="submit">Cook</button>
+</form>
