@@ -1,7 +1,7 @@
 <h1>Burgers Ready to Eat!</h1>
 <ul>
   {{#each burgers}}
-    <li>{{burger_name}}</li>
+    <li>{{burger_name}} <button class="eat-burger" data-id="{{this.id}}">Eat!</button></li>
   {{/each}}
 </ul>
 

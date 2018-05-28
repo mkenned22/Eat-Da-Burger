@@ -6,13 +6,13 @@ var burger = {
             callback(response);
         });
     },
-    insertOne: function(callback){
+    insertOne: function(burgerName,callback){
         orm.insertOne("burgers",burgerName,function(response){
             callback(response);
         });
     },
-    updateOne: function(callback){
-        orm.updateOne("burgers",burgerName,function(response){
+    updateOne: function(id,callback){
+        orm.updateOne("burgers",id,function(response){
             callback(response);
         });
     }

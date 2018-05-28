@@ -4,7 +4,7 @@ var connection = require("./connection.js");
 var query;
 var orm = {
     selectAll: function(tableName, callback){
-        query = "select burger_name from " + tableName + ";";
+        query = "select * from burgers where devoured=0";
         connection.query(query, function(error, result){
             if(error){
                 throw error;
@@ -13,7 +13,7 @@ var orm = {
         });
     },
     insertOne: function(tableName, burgerName, callback){
-        query = "insert into " + tableName + "(burger_name,devoured) values (" + burgerName + ",false)" + ";";
+        query = "insert into " + tableName + '(burger_name,devoured) values ("' + burgerName + '",false)' + ';';
         connection.query(query, function(error, result){
             if(error){
                 throw error;
@@ -21,8 +21,8 @@ var orm = {
             callback(result);
         });
     },
-    updateOne: function(tableName, burgerName, callback){
-        query = "update " + tableName + "set devoured=true where burger_name=" + burgerName + ";";
+    updateOne: function(tableName, id, callback){
+        query = "update burgers set devoured=1 where id=" + id + ";";
         connection.query(query, function(error, result){
             if(error){
                 throw error;
